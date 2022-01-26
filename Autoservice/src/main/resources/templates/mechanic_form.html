@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Mechanics</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container text-center">
+    <div th:if="${mechanic.id == null}"><h1>Create New Mechanic</h1></div>
+    <div th:unless="${mechanic.id == null}"><h1>Edit Mechanic</h1></div>
+
+    <form th:action="@{/mechanics/save}" th:object="${mechanic}" method="post"
+          style="max-width: 600px; margin: 0 auto;">
+        <input type="hidden" th:field="*{id}" th:value="${mechanic.id}" />
+        <div class="m-3">
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">First Name: </label>
+                <div>
+                    <input type="text" th:field="*{firstName}" class="form-control" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Last Name: </label>
+                <div>
+                    <input type="text" th:field="*{lastName}" class="form-control" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Car: </label>
+                <div>
+                    <select th:field="*{car}" class="form-control" required>
+                        <th:block th:each="car : ${listCars}">
+                            <option th:text="${car.color}" th:value="${car.id}" />
+                        </th:block>
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-center p-3">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>
