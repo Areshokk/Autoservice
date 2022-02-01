@@ -13,7 +13,7 @@ public class WorkService {
     @Autowired
     private WorkRepository workRepository;
 
-    public List<Work> listAll(){
+    public List<Work> listAll() {
         return workRepository.findAll();
     }
 
@@ -21,7 +21,7 @@ public class WorkService {
         workRepository.save(work);
     }
 
-    public Work findById(Integer id){
+    public Work findById(Integer id) {
         return workRepository.getOne(id);
     }
 

@@ -12,13 +12,13 @@
 
     <form th:action="@{/brands/save}" th:object="${brand}" method="post"
           style="max-width: 600px; margin: 0 auto;">
-        <input type="hidden" th:field="*{id}" th:value="${brand.id}" />
+        <input type="hidden" th:field="*{id}" th:value="${brand.id}"/>
         <div class="m-3">
 
             <div class="form-group row">
                 <label class="col-form-label col-sm-4">Name of brand: </label>
                 <div>
-                    <input type="text" th:field="*{name}" class="form-control" required />
+                    <input type="text" th:field="*{name}" class="form-control" required/>
                 </div>
             </div>
 
@@ -27,7 +27,7 @@
                 <div>
                     <select th:field="*{car}" class="form-control" required>
                         <th:block th:each="car : ${listCars}">
-                            <option th:text="${car.color}" th:value="${car.id}" />
+                            <option th:text="${car.color}" th:value="${car.id}"/>
                         </th:block>
                     </select>
                 </div>

@@ -1,7 +1,6 @@
 package com.areshok.Autoservice.repository;
 
 import com.areshok.Autoservice.model.Brand;
-import com.areshok.Autoservice.model.Car;
 import com.areshok.Autoservice.model.Model;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
@@ -25,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ModelRepositoryTest {
 
     @Autowired
-    private  ModelRepository modelRepository;
+    private ModelRepository modelRepository;
 
     @Test
     @Order(1)
@@ -36,7 +35,7 @@ class ModelRepositoryTest {
 //                .name("Brand Name")
 //                .build();
 
-        Model model = new Model(1, "Model Name",new Brand());
+        Model model = new Model(1, "Model Name", new Brand());
 
         modelRepository.save(model);
 

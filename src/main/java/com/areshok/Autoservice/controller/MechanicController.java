@@ -2,7 +2,6 @@ package com.areshok.Autoservice.controller;
 
 import com.areshok.Autoservice.model.Car;
 import com.areshok.Autoservice.model.Mechanic;
-import com.areshok.Autoservice.model.Work;
 import com.areshok.Autoservice.repository.CarRepository;
 import com.areshok.Autoservice.repository.MechanicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,7 @@ public class MechanicController {
     @GetMapping("/mechanics")
     public String listMechanics(Model model) {
         List<Mechanic> listMechanics = mechanicRepository.findAll();
-        model.addAttribute("listMechanics",listMechanics);
+        model.addAttribute("listMechanics", listMechanics);
 
         return "mechanics";
     }
@@ -49,7 +48,7 @@ public class MechanicController {
     }
 
     @GetMapping("/mechanics/delete/{id}")
-    public String deleteMechanic(@PathVariable("id") Integer id, Model model){
+    public String deleteMechanic(@PathVariable("id") Integer id, Model model) {
         mechanicRepository.deleteById(id);
 
         return "redirect:/mechanics";

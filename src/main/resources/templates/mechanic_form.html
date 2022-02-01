@@ -12,20 +12,20 @@
 
     <form th:action="@{/mechanics/save}" th:object="${mechanic}" method="post"
           style="max-width: 600px; margin: 0 auto;">
-        <input type="hidden" th:field="*{id}" th:value="${mechanic.id}" />
+        <input type="hidden" th:field="*{id}" th:value="${mechanic.id}"/>
         <div class="m-3">
 
             <div class="form-group row">
                 <label class="col-form-label col-sm-4">First Name: </label>
                 <div>
-                    <input type="text" th:field="*{firstName}" class="form-control" required />
+                    <input type="text" th:field="*{firstName}" class="form-control" required/>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label class="col-form-label col-sm-4">Last Name: </label>
                 <div>
-                    <input type="text" th:field="*{lastName}" class="form-control" required />
+                    <input type="text" th:field="*{lastName}" class="form-control" required/>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
                 <div>
                     <select th:field="*{car}" class="form-control" required>
                         <th:block th:each="car : ${listCars}">
-                            <option th:text="${car.color}" th:value="${car.id}" />
+                            <option th:text="${car.color}" th:value="${car.id}"/>
                         </th:block>
                     </select>
                 </div>

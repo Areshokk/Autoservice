@@ -6,13 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class BrandService {
 
     @Autowired
     private BrandRepository brandRepository;
 
-    public List<Brand> listAll(){
+    public List<Brand> listAll() {
         return brandRepository.findAll();
     }
 
@@ -20,7 +21,7 @@ public class BrandService {
         brandRepository.save(brand);
     }
 
-    public Brand findById(Integer id){
+    public Brand findById(Integer id) {
         return brandRepository.getOne(id);
     }
 

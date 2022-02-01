@@ -13,7 +13,7 @@ public class CarService {
     @Autowired
     private CarRepository carRepository;
 
-    public List<Car> listAll(){
+    public List<Car> listAll() {
         return carRepository.findAll();
     }
 
@@ -21,7 +21,7 @@ public class CarService {
         carRepository.save(car);
     }
 
-    public Car findById(Integer id){
+    public Car findById(Integer id) {
         return carRepository.getOne(id);
     }
 

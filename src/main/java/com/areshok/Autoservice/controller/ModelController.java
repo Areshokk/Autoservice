@@ -1,12 +1,8 @@
 package com.areshok.Autoservice.controller;
 
 import com.areshok.Autoservice.model.Brand;
-import com.areshok.Autoservice.model.Car;
-import com.areshok.Autoservice.model.Work;
 import com.areshok.Autoservice.repository.BrandRepository;
 import com.areshok.Autoservice.repository.ModelRepository;
-import com.areshok.Autoservice.service.BrandService;
-import com.areshok.Autoservice.service.ModelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +25,7 @@ public class ModelController {
     @GetMapping("/models")
     public String listCategories(Model model) {
         List<com.areshok.Autoservice.model.Model> listModels = modelRepository.findAll();
-        model.addAttribute("listModels",listModels);
+        model.addAttribute("listModels", listModels);
 
         return "models";
     }
@@ -37,7 +33,7 @@ public class ModelController {
     @GetMapping("/models/new")
     public String showCreateNewModelForm(Model model) {
         List<Brand> listBrands = brandRepository.findAll();
-        model.addAttribute("model",new com.areshok.Autoservice.model.Model());
+        model.addAttribute("model", new com.areshok.Autoservice.model.Model());
         model.addAttribute("listBrands", listBrands);
 
 
@@ -53,7 +49,7 @@ public class ModelController {
 
 
     @GetMapping("/models/delete/{id}")
-    public String deleteModel(@PathVariable("id") Integer id, Model model){
+    public String deleteModel(@PathVariable("id") Integer id, Model model) {
         modelRepository.deleteById(id);
 
         return "redirect:/models";

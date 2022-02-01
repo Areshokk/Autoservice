@@ -12,40 +12,40 @@
 
     <form th:action="@{/orders/save}" th:object="${order}" method="post"
           style="max-width: 600px; margin: 0 auto;">
-        <input type="hidden" th:field="*{id}" th:value="${order.id}" />
+        <input type="hidden" th:field="*{id}" th:value="${order.id}"/>
         <div class="m-3">
 
             <div class="form-group row">
                 <label class="col-form-label col-sm-4">Service Name: </label>
                 <div>
-                    <input type="text" field="*{serviceName}" name="serviceName" class="form-control" required />
+                    <input type="text" field="*{serviceName}" name="serviceName" class="form-control" required/>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label class="col-form-label col-sm-4">Price: </label>
                 <div>
-                    <input type="text" field="*{price}" name="price" class="form-control" required />
+                    <input type="text" field="*{price}" name="price" class="form-control" required/>
                 </div>
             </div>
 
-<!--            <div class="form-group row">-->
-<!--                <label class="col-form-label col-sm-4">Cars: </label>-->
-<!--                <div>-->
-<!--                    <select field="*{cars}" name="cars" class="form-control" required>-->
-<!--                        <th:block th:each="car : ${listCars}">-->
-<!--                            <option th:text="${car.year}" th:value="${car.id}" />-->
-<!--                        </th:block>-->
-<!--                    </select>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="form-group row">-->
+            <!--                <label class="col-form-label col-sm-4">Cars: </label>-->
+            <!--                <div>-->
+            <!--                    <select field="*{cars}" name="cars" class="form-control" required>-->
+            <!--                        <th:block th:each="car : ${listCars}">-->
+            <!--                            <option th:text="${car.year}" th:value="${car.id}" />-->
+            <!--                        </th:block>-->
+            <!--                    </select>-->
+            <!--                </div>-->
+            <!--            </div>-->
 
             <div class="form-group row">
                 <label class="col-form-label col-sm-4">User: </label>
                 <div>
                     <select th:field="*{user}" class="form-control" required>
                         <th:block th:each="user : ${listUsers}">
-                            <option th:text="${user.name}" th:value="${user.id}" />
+                            <option th:text="${user.name}" th:value="${user.id}"/>
                         </th:block>
                     </select>
                 </div>

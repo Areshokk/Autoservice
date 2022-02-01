@@ -13,7 +13,7 @@ public class MechanicService {
     @Autowired
     private MechanicRepository mechanicRepository;
 
-    public List<Mechanic> listAll(){
+    public List<Mechanic> listAll() {
         return mechanicRepository.findAll();
     }
 
@@ -21,7 +21,7 @@ public class MechanicService {
         mechanicRepository.save(mechanic);
     }
 
-    public Mechanic findById(Integer id){
+    public Mechanic findById(Integer id) {
         return mechanicRepository.getOne(id);
     }
 

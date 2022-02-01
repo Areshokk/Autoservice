@@ -4,8 +4,6 @@ import com.areshok.Autoservice.model.Order;
 import com.areshok.Autoservice.model.User;
 import com.areshok.Autoservice.repository.OrderRepository;
 import com.areshok.Autoservice.repository.UserRepository;
-import com.areshok.Autoservice.service.OrderService;
-import com.areshok.Autoservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +25,7 @@ public class UserController {
     @GetMapping("/users")
     public String listUsers(Model model) {
         List<User> listUsers = userRepository.findAll();
-        model.addAttribute("listUsers",listUsers);
+        model.addAttribute("listUsers", listUsers);
 
         return "users";
     }
@@ -49,18 +47,18 @@ public class UserController {
     }
 
     @GetMapping("/users/edit/{id}")
-    public String showEditUserForm(@PathVariable("id") Integer id, Model model){
+    public String showEditUserForm(@PathVariable("id") Integer id, Model model) {
         User user = userRepository.findById(id).get();
         List<Order> listOrders = orderRepository.findAll();
 
-        model.addAttribute("user",user);
-        model.addAttribute("listOrders",listOrders);
+        model.addAttribute("user", user);
+        model.addAttribute("listOrders", listOrders);
 
         return "user_form";
     }
 
     @GetMapping("/users/delete/{id}")
-    public String deleteUser(@PathVariable("id") Integer id, Model model){
+    public String deleteUser(@PathVariable("id") Integer id, Model model) {
         userRepository.deleteById(id);
 
         return "redirect:/users";

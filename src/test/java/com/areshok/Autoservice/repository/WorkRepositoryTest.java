@@ -35,7 +35,7 @@ class WorkRepositoryTest {
 //                .works("Replace oil")
 //                .build();
 
-        Work work = new Work(1,"Replace oil",new Car());
+        Work work = new Work(1, "Replace oil", new Car());
 
         workRepository.save(work);
 

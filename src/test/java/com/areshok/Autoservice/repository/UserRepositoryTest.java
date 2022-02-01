@@ -1,6 +1,5 @@
 package com.areshok.Autoservice.repository;
 
-import com.areshok.Autoservice.model.Car;
 import com.areshok.Autoservice.model.User;
 import org.assertj.core.api.Assertions;
 
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
-
 
 
 import java.util.ArrayList;
@@ -38,14 +36,13 @@ class UserRepositoryTest {
 //                .phone("1234")
 //                .build();
 
-        User user = new User(1,"Name","1234",new ArrayList<>());
+        User user = new User(1, "Name", "1234", new ArrayList<>());
 
         userRepository.save(user);
 
         Assertions.assertThat(user.getId()).isGreaterThan(0);
 
     }
-
 
 
     @Test

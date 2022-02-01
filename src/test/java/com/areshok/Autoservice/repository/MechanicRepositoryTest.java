@@ -2,7 +2,6 @@ package com.areshok.Autoservice.repository;
 
 import com.areshok.Autoservice.model.Car;
 import com.areshok.Autoservice.model.Mechanic;
-import com.areshok.Autoservice.model.Work;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -36,7 +35,7 @@ class MechanicRepositoryTest {
 //                .lastName("Last Name")
 //                .build();
 
-        Mechanic mechanic = new Mechanic(1,"First Name","Last Name",new Car());
+        Mechanic mechanic = new Mechanic(1, "First Name", "Last Name", new Car());
 
         mechanicRepository.save(mechanic);
 

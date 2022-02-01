@@ -2,7 +2,6 @@ package com.areshok.Autoservice.controller;
 
 import com.areshok.Autoservice.model.Brand;
 import com.areshok.Autoservice.model.Car;
-import com.areshok.Autoservice.model.Work;
 import com.areshok.Autoservice.repository.BrandRepository;
 import com.areshok.Autoservice.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +25,7 @@ public class BrandController {
     @GetMapping("/brands")
     public String listWorks(Model model) {
         List<Brand> listBrands = brandRepository.findAll();
-        model.addAttribute("listBrands",listBrands);
+        model.addAttribute("listBrands", listBrands);
 
         return "brands";
     }
@@ -48,7 +47,7 @@ public class BrandController {
     }
 
     @GetMapping("/brands/delete/{id}")
-    public String deleteBrand(@PathVariable("id") Integer id, Model model){
+    public String deleteBrand(@PathVariable("id") Integer id, Model model) {
         brandRepository.deleteById(id);
 
         return "redirect:/brands";

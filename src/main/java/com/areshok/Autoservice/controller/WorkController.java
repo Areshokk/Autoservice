@@ -1,7 +1,6 @@
 package com.areshok.Autoservice.controller;
 
 import com.areshok.Autoservice.model.Car;
-import com.areshok.Autoservice.model.Order;
 import com.areshok.Autoservice.model.Work;
 import com.areshok.Autoservice.repository.CarRepository;
 import com.areshok.Autoservice.repository.WorkRepository;
@@ -26,7 +25,7 @@ public class WorkController {
     @GetMapping("/works")
     public String listWorks(Model model) {
         List<Work> listWorks = workRepository.findAll();
-        model.addAttribute("listWorks",listWorks);
+        model.addAttribute("listWorks", listWorks);
 
         return "works";
     }
@@ -48,7 +47,7 @@ public class WorkController {
     }
 
     @GetMapping("/works/delete/{id}")
-    public String deleteWork(@PathVariable("id") Integer id, Model model){
+    public String deleteWork(@PathVariable("id") Integer id, Model model) {
         workRepository.deleteById(id);
 
         return "redirect:/works";

@@ -6,13 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class ModelService {
 
     @Autowired
     private ModelRepository modelRepository;
 
-    public List<Model> listAll(){
+    public List<Model> listAll() {
         return modelRepository.findAll();
     }
 
@@ -20,7 +21,7 @@ public class ModelService {
         modelRepository.save(model);
     }
 
-    public Model findById(Integer id){
+    public Model findById(Integer id) {
         return modelRepository.getOne(id);
     }
 

@@ -26,7 +26,7 @@ public class OrderController {
     @GetMapping("/orders")
     public String listOrders(Model model) {
         List<Order> listOrders = orderRepository.findAll();
-        model.addAttribute("listOrders",listOrders);
+        model.addAttribute("listOrders", listOrders);
 
         return "orders";
     }
@@ -59,7 +59,7 @@ public class OrderController {
 //    }
 
     @GetMapping("/orders/delete/{id}")
-    public String deleteOrder(@PathVariable("id") Integer id, Model model){
+    public String deleteOrder(@PathVariable("id") Integer id, Model model) {
         orderRepository.deleteById(id);
 
         return "redirect:/orders";

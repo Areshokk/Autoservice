@@ -2,7 +2,6 @@ package com.areshok.Autoservice.repository;
 
 import com.areshok.Autoservice.model.Brand;
 import com.areshok.Autoservice.model.Car;
-import com.areshok.Autoservice.model.Mechanic;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;

@@ -2,10 +2,8 @@ package com.areshok.Autoservice.controller;
 
 import com.areshok.Autoservice.model.Car;
 import com.areshok.Autoservice.model.Order;
-import com.areshok.Autoservice.model.User;
 import com.areshok.Autoservice.repository.CarRepository;
 import com.areshok.Autoservice.repository.OrderRepository;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +26,7 @@ public class CarController {
     @GetMapping("/cars")
     public String listCars(Model model) {
         List<Car> listCars = carRepository.findAll();
-        model.addAttribute("listCars",listCars);
+        model.addAttribute("listCars", listCars);
 
         return "cars";
     }
@@ -50,7 +48,7 @@ public class CarController {
     }
 
     @GetMapping("/cars/delete/{id}")
-    public String deleteCar(@PathVariable("id") Integer id, Model model){
+    public String deleteCar(@PathVariable("id") Integer id, Model model) {
         carRepository.deleteById(id);
 
         return "redirect:/cars";

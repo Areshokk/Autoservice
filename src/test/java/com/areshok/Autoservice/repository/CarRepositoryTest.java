@@ -1,7 +1,6 @@
 package com.areshok.Autoservice.repository;
 
 import com.areshok.Autoservice.model.Car;
-import com.areshok.Autoservice.model.User;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -36,7 +35,7 @@ class CarRepositoryTest {
 //                .year(2022)
 //                .build();
 
-        Car car = new Car(1,"Black",2022,new com.areshok.Autoservice.model.Order(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
+        Car car = new Car(1, "Black", 2022, new com.areshok.Autoservice.model.Order(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
 
         carRepository.save(car);
 
