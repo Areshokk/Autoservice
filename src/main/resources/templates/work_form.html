@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Work</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container text-center">
+    <div th:if="${work.id == null}"><h1>Create New Work</h1></div>
+    <div th:unless="${work.id == null}"><h1>Edit Work</h1></div>
+
+    <form th:action="@{/works/save}" th:object="${work}" method="post"
+          style="max-width: 600px; margin: 0 auto;">
+        <input type="hidden" th:field="*{id}" th:value="${work.id}" />
+        <div class="m-3">
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Type of work: </label>
+                <div>
+                    <input type="text" th:field="*{works}" class="form-control" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Car: </label>
+                <div>
+                    <select th:field="*{car}" class="form-control" required>
+                        <th:block th:each="car : ${listCars}">
+                            <option th:text="${car.color}" th:value="${car.id}" />
+                        </th:block>
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-center p-3">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>

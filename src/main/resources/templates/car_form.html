@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Car</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container text-center">
+    <div th:if="${car.id == null}"><h1>Create New Car</h1></div>
+    <div th:unless="${car.id == null}"><h1>Edit Car</h1></div>
+
+    <form th:action="@{/cars/save}" th:object="${car}" method="post"
+          style="max-width: 600px; margin: 0 auto;">
+        <input type="hidden" th:field="*{id}" th:value="${car.id}" />
+        <div class="m-3">
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Color: </label>
+                <div>
+                    <input type="text" th:field="*{color}" class="form-control" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Year: </label>
+                <div>
+                    <input type="text" th:field="*{year}" class="form-control" required />
+                </div>
+            </div>
+
+
+<!--            <div class="form-group row">-->
+<!--                <label class="col-form-label col-sm-4">Cars: </label>-->
+<!--                <div>-->
+<!--                    <select field="*{cars}" name="cars" class="form-control" required>-->
+<!--                        <th:block th:each="car : ${listCars}">-->
+<!--                            <option th:text="${car.year}" th:value="${car.id}" />-->
+<!--                        </th:block>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">User: </label>
+                <div>
+                    <select th:field="*{order}" class="form-control" required>
+                        <th:block th:each="order : ${listOrders}">
+                            <option th:text="${order.serviceName}" th:value="${order.id}" />
+                        </th:block>
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-center p-3">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>
