@@ -5,6 +5,7 @@ import com.areshok.Autoservice.model.User;
 import com.areshok.Autoservice.repository.OrderRepository;
 import com.areshok.Autoservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,6 +61,8 @@ public class UserController {
     @GetMapping("/users/delete/{id}")
     public String deleteUser(@PathVariable("id") Integer id, Model model) {
         userRepository.deleteById(id);
+
+//        ResponseEntity.ok().build();
 
         return "redirect:/users";
     }
