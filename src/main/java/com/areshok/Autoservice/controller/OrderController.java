@@ -47,16 +47,16 @@ public class OrderController {
         return "redirect:/orders";
     }
 
-//    @GetMapping("/orders/edit/{id}")
-//    public String showEditOrderForm(@PathVariable("id") Integer id, Model model){
-//        Order order = orderRepository.findById(id).get();
-//        model.addAttribute("order",order);
-//
-//        List<User> listUsers = userRepository.findAll();
-//        model.addAttribute("listUsers",listUsers);
-//
-//        return "order_form";
-//    }
+    @GetMapping("/orders/edit/{id}")
+    public String showEditOrderForm(@PathVariable("id") Integer id, Model model){
+        Order order = orderRepository.findById(id).get();
+        model.addAttribute("order",order);
+
+        List<User> listUsers = userRepository.findAll();
+        model.addAttribute("listUsers",listUsers);
+
+        return "order_form";
+    }
 
     @GetMapping("/orders/delete/{id}")
     public String deleteOrder(@PathVariable("id") Integer id, Model model) {
